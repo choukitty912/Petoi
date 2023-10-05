@@ -41,6 +41,7 @@ class PetoiController:
     SEND_DELAY = 1
     DEFAULT_SERVO_DELAY = 0.5
 
+
     def __init__(self):
         self._exit_flag = False
         self.connected_ports = {}
@@ -116,6 +117,7 @@ class PetoiController:
                 print(command)
                 ard.send(self.connected_ports, command)
                 time.sleep(self.SEND_DELAY)
+
 
     def close_all(self):
         ard.closeAllSerial(self.connected_ports)
